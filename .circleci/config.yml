@@ -1,27 +1,29 @@
 version: 2.1
 
-jobs: 
+jobs:
   build:
     docker:
-      - image: cimg/openjdk:8.0
+      - image: cimg/openjdk:8.0  # Remplacez par l'image appropriée
     steps:
       - checkout
-      - run: 
-        name: Build Job
-        command: echo "ça build mon gars"
+      - run:
+          name: Build Job
+          command: echo "this is the build job"
+
   test:
     docker:
-      - image: cimg/openjdk:8-jdk
+      - image: cimg/openjdk:8.0  # Utilisez la même image que dans le job de build
     steps:
       - checkout
-      - run: 
-        name: Test Job
-        command: echo "ça test mon gars"
-  workflows:
-    version: 2
-    build_and_test:
-      jobs:
-        - build
-        - test:
+      - run:
+          name: Test Job
+          command: echo "this is the test job"
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test:
           requires:
             - build
