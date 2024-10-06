@@ -3,7 +3,7 @@ version: 2.1
 jobs: 
   build:
     docker:
-      - image: cmg/openjdk:8.0
+      - image: cimg/openjdk:8.0
     steps:
       - checkout
       - run: 
@@ -11,7 +11,7 @@ jobs:
         command: echo "ça build mon gars"
   test:
     docker:
-      - image: circleci/openjdk:8-jdk
+      - image: cimg/openjdk:8-jdk
     steps:
       - checkout
       - run: 
