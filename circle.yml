@@ -1,0 +1,27 @@
+version: 2.1
+
+jobs: 
+  build:
+    docker:
+      - image: cmg/openjdk:8.0
+    steps:
+      - checkout
+      - run: 
+        name: Build Job
+        command: echo "ça build mon gars"
+  test:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - checkout
+      - run: 
+        name: Test Job
+        command: echo "ça test mon gars"
+  workflows:
+    version: 2
+    build_and_test:
+      jobs:
+        - build
+        - test:
+          requires:
+            - build
