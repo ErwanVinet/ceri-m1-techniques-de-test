@@ -3,11 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-<<<<<<< HEAD
-      - image: cimg/openjdk:8.0  # Remplacez par l'image appropriée
-=======
-      - image: cimg/openjdk:8.0 
->>>>>>> 032be94a0f55e63202307705dea71988df74a351
+      - image: cimg/openjdk:8.0
     steps:
       - checkout
       - run:
@@ -16,11 +12,7 @@ jobs:
 
   test:
     docker:
-<<<<<<< HEAD
-      - image: cimg/openjdk:8.0  # Utilisez la même image que dans le job de build
-=======
       - image: cimg/openjdk:8.0
->>>>>>> 032be94a0f55e63202307705dea71988df74a351
     steps:
       - checkout
       - run:
