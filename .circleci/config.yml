@@ -17,7 +17,7 @@ jobs:
       - checkout
       - run:
           name: Test Job
-          command: echo "this is the test job"
+          command: mvn test
 
 workflows:
   version: 2
