@@ -21,6 +21,7 @@ jobs:
       - run:
           name: Test Job
           command: mvn test
+      - codecov/upload
 
 workflows:
   version: 2
@@ -30,9 +31,3 @@ workflows:
       - test:
           requires:
             - build
-  upload-to-codecov:
-    jobs:
-      - test
-      - codecov/upload:
-          requires:
-            - test
