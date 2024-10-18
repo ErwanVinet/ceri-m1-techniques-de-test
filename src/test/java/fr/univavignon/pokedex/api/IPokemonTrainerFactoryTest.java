@@ -24,6 +24,9 @@ public class IPokemonTrainerFactoryTest {
         PokemonTrainer result = provider.createTrainer("Dylan", Team.INSTINCT, pokedexFactory);
         assertNotNull(result);
         assertEquals(pokemonTrainer, result);
+        assertEquals(pokemonTrainer.getName(), result.getName());
+        assertEquals(pokemonTrainer.getTeam(), result.getTeam());
+        assertEquals(pokemonTrainer.getPokedex(), result.getPokedex());
         Mockito.verify(provider).createTrainer("Dylan", Team.INSTINCT, pokedexFactory);
     }
 }

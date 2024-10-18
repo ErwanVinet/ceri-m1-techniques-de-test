@@ -16,14 +16,15 @@ public class IPokemonFactoryTest {
 
     @Test
     public void testGetPokemonMetadata() throws Exception {
-        Pokemon pokemon = new Pokemon(1, "Arcanin", 1, 2, 3, 4, 5, 6, 7, 8.5);
-        Mockito.when(provider.createPokemon(1, 4, 5, 6, 7)).thenReturn(pokemon);
-        Pokemon result = provider.createPokemon(1, 4, 5, 6, 7);
+        Pokemon pokemon = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 0.56);
+        Mockito.when(provider.createPokemon(0, 613, 64, 4000, 4)).thenReturn(pokemon);
+        Pokemon result = provider.createPokemon(0, 613, 64, 4000, 4);
         assertNotNull(result);
         assertEquals(pokemon, result);
-        assertEquals(result.getCp(), 4);
-        assertEquals(result.getHp(), 5);
-        assertEquals(result.getDust(), 6);
-        assertEquals(result.getCandy(), 7);
+        assertEquals(result.getIndex(), 0);
+        assertEquals(result.getCp(), 613);
+        assertEquals(result.getHp(), 64);
+        assertEquals(result.getDust(), 4000);
+        assertEquals(result.getCandy(), 4);
     }
 }
