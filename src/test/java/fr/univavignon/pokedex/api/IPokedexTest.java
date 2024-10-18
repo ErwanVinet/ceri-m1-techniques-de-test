@@ -83,8 +83,8 @@ public class IPokedexTest {
         Pokemon aqua = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4, 1.00);
         List<Pokemon> list = Arrays.asList(bulbi, aqua);
         Mockito.when(provider.size()).thenReturn(list.size());
-        int taille = provider.size();
-        assertEquals(taille, list.size());
+        int tailleList = provider.size();
+        assertEquals(tailleList, list.size());
         Mockito.verify(provider).size();
     }
 }
