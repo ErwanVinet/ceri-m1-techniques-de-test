@@ -19,6 +19,7 @@ public class IPokemonMetadataProviderTest {
         PokemonMetadata pokemon = new PokemonMetadata(1, "Arcanin", 100, 90, 54);
         Mockito.when(provider.getPokemonMetadata(1)).thenReturn(pokemon);
         PokemonMetadata result = provider.getPokemonMetadata(1);
+        assertNotNull(result);
         assertEquals(pokemon, result);
         assertEquals("Arcanin", result.getName());
         assertEquals(1, result.getIndex());

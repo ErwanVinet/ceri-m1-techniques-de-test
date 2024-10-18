@@ -19,6 +19,7 @@ public class IPokemonFactoryTest {
         Pokemon pokemon = new Pokemon(1, "Arcanin", 1, 2, 3, 4, 5, 6, 7, 8.5);
         Mockito.when(provider.createPokemon(1, 4, 5, 6, 7)).thenReturn(pokemon);
         Pokemon result = provider.createPokemon(1, 4, 5, 6, 7);
+        assertNotNull(result);
         assertEquals(pokemon, result);
         assertEquals(result.getCp(), 4);
         assertEquals(result.getHp(), 5);
