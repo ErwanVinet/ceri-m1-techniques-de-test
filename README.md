@@ -1,5 +1,18 @@
 # UCE Génie Logiciel Avancé : Techniques de tests
 
+## INFORMATION
+
+VINET Erwan
+
+M1 ILSEN CLASSIQUE GRP-1
+
+Badge CircleCI :
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/ErwanVinet/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/ErwanVinet/ceri-m1-techniques-de-test/tree/master)
+
+Badge Codecov :
+[![codecov](https://codecov.io/github/ErwanVinet/ceri-m1-techniques-de-test/graph/badge.svg?token=FHI817TW6V)](https://codecov.io/github/ErwanVinet/ceri-m1-techniques-de-test)
+
+
 ## Introduction
 
 Vous allez à travers ces projet mettre en application une partie des aspects évoqués en cours vis à vis des techniques de tests.  
@@ -36,9 +49,3 @@ Si vous ne spécifiez pas de tag, le dernier commit à la date-heure de la fin d
 
 [^1]: Si vous n’êtes vraiment pas à l’aise avec cet outil nous vous conseillons quand même vivement de vous y mettre.
 
-VINET Erwan
-M1 ILSEN CLASSIQUE GRP-1
-Badge CircleCI : 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/ErwanVinet/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/ErwanVinet/ceri-m1-techniques-de-test/tree/master)
-Badge Codecov :
-[![codecov](https://codecov.io/github/ErwanVinet/ceri-m1-techniques-de-test/graph/badge.svg?token=FHI817TW6V)](https://codecov.io/github/ErwanVinet/ceri-m1-techniques-de-test)
