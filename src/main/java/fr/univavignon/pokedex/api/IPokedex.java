@@ -2,7 +2,7 @@ package fr.univavignon.pokedex.api;
 
 import java.util.Comparator;
 import java.util.List;
-
+import  java.util.ArrayList;
 /**
  * IPokedex interface. An IPokedex aims to store all information about
  * captured pokemon, as their default metadata as well.
