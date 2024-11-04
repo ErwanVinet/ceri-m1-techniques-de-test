@@ -2,6 +2,7 @@
         "https://checkstyle.sourceforge.io/dtds/configuration_1_3.dtd">
 <module name="Checker">
     <module name="TreeWalker">
+        <module name="UnusedImports"/>
         <module name="AvoidStarImport"/>
         <module name="ConstantName"/>
         <module name="EmptyBlock"/>

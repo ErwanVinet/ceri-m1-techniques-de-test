@@ -2,6 +2,7 @@ package fr.univavignon.pokedex.api;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.TreeSet;
 
 /**
  * IPokedex interface. An IPokedex aims to store all information about
