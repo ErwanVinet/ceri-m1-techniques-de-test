@@ -1,4 +1,4 @@
-name: Checkstyle Badge
+name: Checkstyle
 
 on:
   push:
@@ -9,6 +9,7 @@ on:
 jobs:
   checkstyle:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -18,22 +19,5 @@ jobs:
         with:
           java-version: '11'
 
-      - name: Build with Maven and Run Checkstyle
-        run: mvn clean verify
-
-      - name: Extract Checkstyle Result
-        id: checkstyle
-        run: |
-          if grep -q "<error" target/checkstyle-result.xml; then
-            echo "::set-output name=status::errors"
-          else
-            echo "::set-output name=status::no-errors"
-          fi
-
-      - name: Update Badge
-        uses: tj-actions/badge@v1
-        with:
-          label: "Checkstyle"
-          status: "${{ steps.checkstyle.outputs.status }}"
-          color: ${{ steps.checkstyle.outputs.status == 'errors' && 'red' || 'brightgreen' }}
-          path: "checkstyle-badge.svg"
+      - name: Run Maven Checkstyle
+        run: mvn checkstyle:check
