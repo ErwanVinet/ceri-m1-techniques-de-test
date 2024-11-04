@@ -21,4 +21,4 @@ jobs:
           distribution: 'temurin'
 
       - name: Run Maven Checkstyle
-        run: mvn checkstyle:check
+        run: mvn checkstyle:check || ( echo "check failed" && exit 1)

@@ -62,7 +62,7 @@
                     <configLocation>checkstyle.xml</configLocation>
                     <outputFileFormat>xml</outputFileFormat>
                     <outputFile>target/checkstyle-result.xml</outputFile>
-                    <failOnViolation>false</failOnViolation>
+                    <failOnViolation>true</failOnViolation>
                 </configuration>
             </plugin>
         </plugins>
