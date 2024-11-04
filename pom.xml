@@ -46,17 +46,29 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.2.0</version> <!-- Vérifiez la dernière version stable disponible -->
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <configLocation>checkstyle.xml</configLocation>
+                    <outputFileFormat>xml</outputFileFormat>
+                    <outputFile>target/checkstyle-result.xml</outputFile>
+                    <failOnViolation>true</failOnViolation> <!-- Optionnel, pour échouer en cas d'erreurs -->
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
     <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
-        </dependency>
-
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>

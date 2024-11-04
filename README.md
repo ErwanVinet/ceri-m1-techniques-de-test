@@ -12,6 +12,8 @@ Badge CircleCI :
 Badge Codecov :
 [![codecov](https://codecov.io/github/ErwanVinet/ceri-m1-techniques-de-test/graph/badge.svg?token=FHI817TW6V)](https://codecov.io/github/ErwanVinet/ceri-m1-techniques-de-test)
 
+![Checkstyle](https://img.shields.io/badge/Checkstyle-pas%20d'erreurs-brightgreen)
+
 
 ## Introduction
 
