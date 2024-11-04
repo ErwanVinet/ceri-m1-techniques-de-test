@@ -1,6 +1,6 @@
 # UCE Génie Logiciel Avancé : Techniques de tests
 
-## INFORMATION
+## INFORMATIONS
 
 VINET Erwan
 
