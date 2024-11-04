@@ -15,6 +15,7 @@ Badge Codecov :
 Badge CheckStyle : 
 ![Checkstyle](https://github.com/ErwanVinet/ceri-m1-techniques-de-test/actions/workflows/checkstyle.yml/badge.svg)
 
+Documentation : https://erwanvinet.github.io/ceri-m1-techniques-de-test/apidocs
 
 ## Introduction
 
