@@ -1,4 +1,4 @@
-package fr.univavignon.pokedex.imp;
+package fr.univavignon.pokedex.api;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +16,7 @@ public class RocketPokemonFactory implements IPokemonFactory {
 		Map<Integer, String> aMap = new HashMap<Integer, String>();
         aMap.put(-1, "Ash's Pikachu");
         aMap.put(0, "MISSINGNO");
-        aMap.put(1, "Bulbasaur");
+        aMap.put(1, "Bulbasaur");return null;
         //TODO : Gotta map them all !
         index2name = UnmodifiableMap.unmodifiableMap(aMap);
 	}
