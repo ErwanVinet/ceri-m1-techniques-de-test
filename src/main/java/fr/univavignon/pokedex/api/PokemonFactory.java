@@ -1,9 +1,5 @@
 package fr.univavignon.pokedex.api;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Objects;
 import java.util.Random;
 
 public class PokemonFactory implements IPokemonFactory {
