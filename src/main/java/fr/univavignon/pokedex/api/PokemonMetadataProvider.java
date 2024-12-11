@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class PokemonMetadataProvider implements IPokemonMetadataProvider {
-
     @Override
     public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
         String nom = "";
