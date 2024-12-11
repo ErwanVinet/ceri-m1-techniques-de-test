@@ -19,7 +19,7 @@ public class IPokedexFactoryTest {
         //pokedex = Mockito.mock(IPokedex.class);
         pokedex = new Pokedex();
         //metadataProvider = Mockito.mock(IPokemonMetadataProvider.class);
-        metadataProvider = PokemonMetadataProvider();
+        metadataProvider = new PokemonMetadataProvider();
         //Mockito.when(provider.createPokedex(metadataProvider, pokedex)).thenReturn(pokedex);
     }
 
