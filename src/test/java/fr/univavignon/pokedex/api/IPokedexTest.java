@@ -17,7 +17,7 @@ public class IPokedexTest {
     @Before
     public void setUp() throws Exception {
         //provider = Mockito.mock(IPokedex.class);
-        provider = new Pokedex()
+        provider = new Pokedex();
     }
 
     @Test
