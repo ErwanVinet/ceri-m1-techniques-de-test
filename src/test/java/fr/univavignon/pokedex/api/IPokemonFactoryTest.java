@@ -33,7 +33,7 @@ public class IPokemonFactoryTest {
     public void testGetPokemonMetadataException() throws Exception {
         Exception exception = assertThrows(Erreur.class, () -> {
             Pokemon p = pokemonFactory.createPokemon(-1, 613, 64, 4000, 4);
-            assertNull(p)
+            assertNull(p);
         });
     }
 }
