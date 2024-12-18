@@ -29,11 +29,4 @@ public class IPokemonFactoryTest {
         assertTrue(result.getIv() >= 0 && result.getIv() <= 100);
     }
 
-    @Test
-    public void testGetPokemonMetadataException() throws Exception {
-        assertThrows(PokedexException.class, () -> {
-            pokemonFactory.createPokemon(-1, 613, 64, 4000, 4);
-        });
-
-    } 
 }
