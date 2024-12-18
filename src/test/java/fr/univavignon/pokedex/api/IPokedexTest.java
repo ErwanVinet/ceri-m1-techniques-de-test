@@ -117,7 +117,7 @@ public class IPokedexTest {
 
 
     @Test
-    public void getPokemonTest() throws Exception {
+    public void getPokemonMetaDataTest() throws Exception {
         PokemonMetadata meta = provider.getPokemonMetadata(1);
         PokemonMetadata data = pokedex.getPokemonMetadata(1);
         assertNotNull(data);
