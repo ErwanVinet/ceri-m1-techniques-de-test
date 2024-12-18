@@ -17,7 +17,7 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider {
         // Lecture du fichier CSV et récupération des statistiques
         try (BufferedReader br = new BufferedReader(new FileReader("pokemon.csv"))) {
             String ligne;
-            br.readLine(); // Ignorer l'en-tête
+            //br.readLine(); // Ignorer l'en-tête
 
             while ((ligne = br.readLine()) != null) {
                 String[] valeurs = ligne.split(",");
