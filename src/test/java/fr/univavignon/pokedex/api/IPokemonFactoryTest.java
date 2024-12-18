@@ -32,7 +32,7 @@ public class IPokemonFactoryTest {
     @Test
     public void testGetPokemonMetadataException() throws Exception {
         assertThrows(PokedexException.class, () -> {
-            pokedex.createPokemon(-1, 613, 64, 4000, 4);
+            pokemonFactory.createPokemon(-1, 613, 64, 4000, 4);
         });
 
     } 
