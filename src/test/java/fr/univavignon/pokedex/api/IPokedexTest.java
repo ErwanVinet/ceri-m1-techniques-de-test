@@ -13,11 +13,13 @@ import java.util.List;
 public class IPokedexTest {
 
     private IPokedex pokedex;
+    private IPokemonFactory pokemonFactory;
 
     @Before
     public void setUp() throws Exception {
         //pokedex = Mockito.mock(IPokedex.class);
         pokedex = new Pokedex();
+        pokemonFactory  = new PokemonFactory()
     }
 
     @Test
@@ -74,6 +76,7 @@ public class IPokedexTest {
         pokedex.addPokemon(aqua);
         Comparator<Pokemon> comparatorByName = Comparator.comparing(Pokemon::getName);
         //Mockito.when(pokedex.getPokemons(comparatorByName)).thenReturn(list);
+        assertNotNull(comparatorByName);
         List<Pokemon> sortedPokemons = pokedex.getPokemons(comparatorByName);
         assertNotNull(sortedPokemons);
         assertEquals(2, sortedPokemons.size());
@@ -95,5 +98,14 @@ public class IPokedexTest {
         pokedex.addPokemon(aqua);
         assertEquals(pokedex.size(), 2);
         //Mockito.verify(pokedex).size();
+    }
+
+
+    @Test
+    public void createPokemonTest() throws Exception {
+        Pokemon pokemon = pokemonFactory.createPokemon(1, 613, 64, 4000, 4);
+        Pokemon result = pokedex.createPokemon(1, 613, 64, 4000, 4);
+        assertNotNull(result);
+        assertEquals(pokemon, result);
     }
 }
