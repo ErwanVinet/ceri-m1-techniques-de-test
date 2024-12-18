@@ -121,7 +121,7 @@ public class IPokedexTest {
         PokemonMetadata meta = provider.getPokemonMetadata(1);
         PokemonMetadata data = pokedex.getPokemonMetadata(1);
         assertNotNull(data);
-        assertEquals(meta.getName(), pokemon.getName());
+        assertEquals(meta.getName(), data.getName());
         assertEquals(meta.getIndex(), data.getIndex());
         assertEquals(meta.getAttack(), data.getAttack());
         assertEquals(meta.getDefense(), data.getDefense());
