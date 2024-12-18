@@ -18,10 +18,10 @@ public class IPokemonFactoryTest {
     public void testGetPokemonMetadata() throws Exception {
         //Pokemon pokemon = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 0.56);
         //Mockito.when(pokemonFactory.createPokemon(0, 613, 64, 4000, 4)).thenReturn(pokemon);
-        Pokemon result = pokemonFactory.createPokemon(0, 613, 64, 4000, 4);
+        Pokemon result = pokemonFactory.createPokemon(1, 613, 64, 4000, 4);
 
         assertNotNull(result);
-        assertEquals(result.getIndex(), 0);
+        assertEquals(result.getIndex(), 1);
         assertEquals(result.getCp(), 613);
         assertEquals(result.getHp(), 64);
         assertEquals(result.getDust(), 4000);
