@@ -41,7 +41,7 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider {
             return map.get(index);
         }
         else{
-            throw new PokedexException("Pokemon introvable");
+            throw new PokedexException("Pokemon introuvable");
         }
     }
 }

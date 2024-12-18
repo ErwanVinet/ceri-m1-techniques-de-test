@@ -28,4 +28,14 @@ public class IPokemonMetadataProviderTest {
         assertEquals(45, pokemon.getStamina());
     }
 
+    @Test
+    pubic void testException() throws Exception {
+        PokemonMetaData pokemon = provider.getPokemonMetadata(-1);
+        Exception exception = assertThrows(PokedexException.class, () -> {
+            PokemonMetaData pokemon = provider.getPokemonMetadata(-1);
+        });
+
+        assertEquals("Pokemon introuvable", exception.getMessage());
+    }
+
 }
