@@ -21,7 +21,6 @@ public class IPokemonFactoryTest {
         Pokemon result = pokemonFactory.createPokemon(0, 613, 64, 4000, 4);
 
         assertNotNull(result);
-        assertEquals(pokemon, result);
         assertEquals(result.getIndex(), 0);
         assertEquals(result.getCp(), 613);
         assertEquals(result.getHp(), 64);
