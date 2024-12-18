@@ -18,7 +18,7 @@ public class PokemonFactory implements IPokemonFactory {
 
             return new Pokemon(index, metadata.getName(), metadata.getAttack() + ivAttack, metadata.getDefense() + ivDefense, metadata.getStamina() + ivVitesse, cp, hp, dust, candy, iv);
         } catch (IOException e) {
-            System.err.println("Erreur lors de la création du pokemon");
+            System.err.println("Erreur lors de la création du Pokemon");
         }
 
         return null;
