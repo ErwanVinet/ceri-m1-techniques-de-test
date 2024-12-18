@@ -1,7 +1,7 @@
 package fr.univavignon.pokedex.api;
 
 import java.util.Random;
-import
+
 public class PokemonFactory implements IPokemonFactory {
 
     @Override
