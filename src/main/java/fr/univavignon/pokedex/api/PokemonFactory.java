@@ -1,7 +1,7 @@
 package fr.univavignon.pokedex.api;
 
 import java.util.Random;
-
+import
 public class PokemonFactory implements IPokemonFactory {
 
     @Override
@@ -18,7 +18,7 @@ public class PokemonFactory implements IPokemonFactory {
 
             return new Pokemon(index, metadata.getName(), metadata.getAttack() + ivAttack, metadata.getDefense() + ivDefense, metadata.getStamina() + ivVitesse, cp, hp, dust, candy, iv);
         } 
-        catch (IOException e) {
+        catch (PokedexException e) {
             System.err.println("Erreur lors de la création du Pokemon");
         }
 
