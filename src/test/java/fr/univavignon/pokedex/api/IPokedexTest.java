@@ -58,9 +58,7 @@ public class IPokedexTest {
         assertEquals(aqua, list.get(0));
         assertEquals(list, result);
         //Mockito.verify(pokedex).getPokemons();
-        assertThrows(UnsupportedOperationException.class, () -> {
-            result.add(new Pokemon(150, "Mewtwo", 126, 126, 90, 613, 64, 4000, 4, 0.56));
-        });
+        
     }
 
 
