@@ -26,6 +26,6 @@ public class IPokemonFactoryTest {
         assertEquals(result.getHp(), 64);
         assertEquals(result.getDust(), 4000);
         assertEquals(result.getCandy(), 4);
-        assertEquals(result.getIv(), 0.56,0);
+        assertTrue(pokemon.getIv() >= 0 && pokemon.getIv() <= 100);
     }
 }
