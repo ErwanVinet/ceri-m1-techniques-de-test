@@ -106,6 +106,10 @@ public class IPokedexTest {
         Pokemon pokemon = pokemonFactory.createPokemon(1, 613, 64, 4000, 4);
         Pokemon result = pokedex.createPokemon(1, 613, 64, 4000, 4);
         assertNotNull(result);
-        assertEquals(pokemon, result);
+        assertEquals(pokemon.getIndex(), result.getIndex());
+        assertEquals(pokemon.getCp(), result.getCp());
+        assertEquals(pokemon.getHp(), result.getHp());
+        assertEquals(pokemon.getDust(), result.getDust());
+        assertEquals(pokemon.getCandy(), result.getCandy());
     }
 }
