@@ -75,8 +75,8 @@ public class IPokedexTest {
         Comparator<Pokemon> comparatorByName = Comparator.comparing(Pokemon::getName);
         //Mockito.when(pokedex.getPokemons(comparatorByName)).thenReturn(list);
         List<Pokemon> sortedPokemons = pokedex.getPokemons(comparatorByName);
-        assertNotNull(sortedPokemons)
-        assertEquals(2, sortedPokemons.size)
+        assertNotNull(sortedPokemons);
+        assertEquals(2, sortedPokemons.size);
         assertEquals("Bulbizarre", sortedPokemons.get(1).getName());
         assertEquals("Aquali", sortedPokemons.get(0).getName());
 
