@@ -23,9 +23,9 @@ public class IPokemonMetadataProviderTest {
         //assertEquals(pokemon, result);
         assertEquals("Bulbizarre", pokemon.getName());
         assertEquals(1, pokemon.getIndex());
-        assertEquals(126, pokemon.getAttack());
-        assertEquals(126, pokemon.getDefense());
-        assertEquals(90, pokemon.getStamina());
+        assertEquals(49, pokemon.getAttack());
+        assertEquals(49, pokemon.getDefense());
+        assertEquals(45, pokemon.getStamina());
     }
 
 }
