@@ -54,8 +54,9 @@ public class IPokedexTest {
         pokedex.addPokemon(bulbi);
         //Mockito.when(pokedex.getPokemons()).thenReturn(list);
         List<Pokemon> result = pokedex.getPokemons();
-        assertEquals(2, list.size());
-        assertEquals(aqua, list.get(0));
+        assertNotNull(result);
+        assertEquals(2, result.size());
+        assertEquals(aqua, result.get(0));
         assertEquals(list, result);
         //Mockito.verify(pokedex).getPokemons();
         
@@ -74,7 +75,8 @@ public class IPokedexTest {
         Comparator<Pokemon> comparatorByName = Comparator.comparing(Pokemon::getName);
         //Mockito.when(pokedex.getPokemons(comparatorByName)).thenReturn(list);
         List<Pokemon> sortedPokemons = pokedex.getPokemons(comparatorByName);
-
+        assertNotNull(sortedPokemons)
+        assertEquals(2, sortedPokemons.size)
         assertEquals("Bulbizarre", sortedPokemons.get(1).getName());
         assertEquals("Aquali", sortedPokemons.get(0).getName());
 
@@ -91,8 +93,7 @@ public class IPokedexTest {
         //Mockito.when(pokedex.size()).thenReturn(list.size());
         pokedex.addPokemon(bulbi);
         pokedex.addPokemon(aqua);
-        int tailleList = pokedex.size();
-        assertEquals(tailleList, 2);
+        assertEquals(pokedex.size(), 2);
         //Mockito.verify(pokedex).size();
     }
 }
