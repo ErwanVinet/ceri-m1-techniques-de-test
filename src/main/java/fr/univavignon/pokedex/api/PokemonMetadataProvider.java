@@ -6,34 +6,41 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class PokemonMetadataProvider implements IPokemonMetadataProvider {
-    @Override
-    public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
-        String nom = "";
-        int attaque = 0;
-        int defense = 0;
-        int vitesse = 0;
-        boolean trouve = false; // Indicateur pour vérifier si le Pokémon a été trouvé
 
-        // Lecture du fichier CSV et récupération des statistiques
-        try (BufferedReader br = new BufferedReader(new FileReader("pokemon.csv"))) {
+    private Map<Integer, PokemonMetadata> map;
+
+    public PokemonMetadataProvider() {
+        map = new HashMap<>();
+        dataCsv();
+    }
+
+
+    private void dataCsv(){
+        try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/fr/univavignon/pokedex/api/pokemon.csv"))) {
             String ligne;
-            //br.readLine(); // Ignorer l'en-tête
+            br.readLine(); // Ignorer l'en-tête
 
             while ((ligne = br.readLine()) != null) {
                 String[] valeurs = ligne.split(",");
-                if (Objects.equals(valeurs[0], Integer.toString(index))) { // Comparer le numéro
-                    // Stocker les valeurs dans les variables locales
-                    nom = valeurs[1];
-                    attaque = Integer.parseInt(valeurs[3]);
-                    defense = Integer.parseInt(valeurs[4]);
-                    vitesse = Integer.parseInt(valeurs[5]);
-                    trouve = true;
-                    break;
-                }
+                int index = Integer.parseInt(valeurs[0]);
+                String nom = valeurs[1];
+                int attaque = Integer.parseInt(valeurs[3]);
+                int defense = Integer.parseInt(valeurs[4]);
+                int vitesse = Integer.parseInt(valeurs[5]);
+                PokemonMetadata metadata = new PokemonMetadata(index, nom, attaque, defense, vitesse);
+                map.put(index, metadata);
             }
         } catch (IOException e) {
             System.err.println("Erreur lors de la lecture du fichier CSV : " + e.getMessage());
         }
-        return new PokemonMetadata(index, nom, attaque, defense, vitesse);
+    }
+    @Override
+    public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
+        if (map.containsKey(index)){
+            return map.get(index);
+        }
+        else{
+            throw new PokedexException("Pokemon introvable");
+        }
     }
 }
