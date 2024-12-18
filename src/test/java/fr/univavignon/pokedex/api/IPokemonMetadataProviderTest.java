@@ -29,7 +29,7 @@ public class IPokemonMetadataProviderTest {
     }
 
     @Test
-    pubic void testException() throws Exception {
+    public void testException() throws Exception {
         PokemonMetaData pokemon = provider.getPokemonMetadata(-1);
         Exception exception = assertThrows(PokedexException.class, () -> {
             PokemonMetaData pokemon = provider.getPokemonMetadata(-1);
