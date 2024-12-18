@@ -14,12 +14,14 @@ public class IPokedexTest {
 
     private IPokedex pokedex;
     private IPokemonFactory pokemonFactory;
+    private IPokemonMetadataProvider provider;
 
     @Before
     public void setUp() throws Exception {
         //pokedex = Mockito.mock(IPokedex.class);
         pokedex = new Pokedex();
         pokemonFactory  = new PokemonFactory();
+        provider = new PokemonMetadataProvider();
     }
 
     @Test
@@ -111,5 +113,18 @@ public class IPokedexTest {
         assertEquals(pokemon.getHp(), result.getHp());
         assertEquals(pokemon.getDust(), result.getDust());
         assertEquals(pokemon.getCandy(), result.getCandy());
+    }
+
+
+    @Test
+    public void getPokemonTest() throws Exception {
+        PokemonMetadata meta = provider.getPokemonMetadata(1);
+        PokemonMetadata data = pokedex.getPokemonMetadata(1);
+        assertNotNull(data);
+        assertEquals(meta.getName(), pokemon.getName());
+        assertEquals(meta.getIndex(), data.getIndex());
+        assertEquals(meta.getAttack(), data.getAttack());
+        assertEquals(meta.getDefense(), data.getDefense());
+        assertEquals(meta.getStamina(), data.getStamina());
     }
 }
