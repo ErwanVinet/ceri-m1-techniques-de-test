@@ -12,28 +12,29 @@ import java.util.List;
 
 public class IPokedexTest {
 
-    private IPokedex provider;
+    private IPokedex pokedex;
 
     @Before
     public void setUp() throws Exception {
-        //provider = Mockito.mock(IPokedex.class);
-        provider = new Pokedex();
+        //pokedex = Mockito.mock(IPokedex.class);
+        pokedex = new Pokedex();
     }
 
     @Test
     public void addPokemonTest() throws Exception {
         Pokemon pokemon = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 0.56);
-        //Mockito.when(provider.addPokemon(pokemon)).thenReturn(0);
-        int index = provider.addPokemon(pokemon);
+        //Mockito.when(pokedex.addPokemon(pokemon)).thenReturn(0);
+        int index = pokedex.addPokemon(pokemon);
         assertEquals(0, index);
-        //Mockito.verify(provider).addPokemon(pokemon);
+        //Mockito.verify(pokedex).addPokemon(pokemon);
     }
 
     @Test
     public void getPokemonTest() throws Exception {
         Pokemon pokemon = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 0.56);
-        //Mockito.when(provider.getPokemon(0)).thenReturn(pokemon);
-        Pokemon result = provider.getPokemon(0);
+        //Mockito.when(pokedex.getPokemon(0)).thenReturn(pokemon);
+        pokedex.addPokemon(pokemon);
+        Pokemon result = pokedex.getPokemon(0);
         assertNotNull(result);
         assertEquals(pokemon, result);
         assertEquals(pokemon.getIndex(), result.getIndex());
@@ -41,20 +42,22 @@ public class IPokedexTest {
         assertEquals(pokemon.getHp(), result.getHp());
         assertEquals(pokemon.getDust(), result.getDust());
         assertEquals(pokemon.getCandy(), result.getCandy());
-        //Mockito.verify(provider).getPokemon(0);
+        //Mockito.verify(pokedex).getPokemon(0);
     }
 
     @Test
-    public void testGetPokemonListTest() throws Exception {
+    public void getPokemonListTest() throws Exception {
         Pokemon bulbi = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 0.56);
         Pokemon aqua = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4, 1.00);
         List<Pokemon> list = Arrays.asList(aqua, bulbi);
-        //Mockito.when(provider.getPokemons()).thenReturn(list);
-        List<Pokemon> result = provider.getPokemons();
+        pokedex.addPokemon(aqua);
+        pokedex.addPokemon(bulbi);
+        //Mockito.when(pokedex.getPokemons()).thenReturn(list);
+        List<Pokemon> result = pokedex.getPokemons();
         assertEquals(2, list.size());
         assertEquals(aqua, list.get(0));
-        assertEquals(bulbi, list.get(1));
-        //Mockito.verify(provider).getPokemons();
+        assertEquals(list, result);
+        //Mockito.verify(pokedex).getPokemons();
         assertThrows(UnsupportedOperationException.class, () -> {
             result.add(new Pokemon(150, "Mewtwo", 126, 126, 90, 613, 64, 4000, 4, 0.56));
         });
@@ -67,25 +70,31 @@ public class IPokedexTest {
         Pokemon aqua = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4, 1.00);
         List<Pokemon> list = Arrays.asList(bulbi, aqua);
         list.sort(Comparator.comparing(Pokemon::getName));
+
+        pokedex.addPokemon(bulbi);
+        pokedex.addPokemon(aqua);
         Comparator<Pokemon> comparatorByName = Comparator.comparing(Pokemon::getName);
-        //Mockito.when(provider.getPokemons(comparatorByName)).thenReturn(list);
-        List<Pokemon> sortedPokemons = provider.getPokemons(comparatorByName);
+        //Mockito.when(pokedex.getPokemons(comparatorByName)).thenReturn(list);
+        List<Pokemon> sortedPokemons = pokedex.getPokemons(comparatorByName);
 
         assertEquals("Bulbizarre", sortedPokemons.get(1).getName());
         assertEquals("Aquali", sortedPokemons.get(0).getName());
 
         // Vérifier l'appel du mock avec le Comparator
-        //Mockito.verify(provider).getPokemons(comparatorByName);
+        //Mockito.verify(pokedex).getPokemons(comparatorByName);
     }
 
     @Test
     public void sizeTest() throws Exception {
+        assertEquals(0, pokedex.size());
         Pokemon bulbi = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 0.56);
         Pokemon aqua = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4, 1.00);
-        List<Pokemon> list = Arrays.asList(bulbi, aqua);
-        //Mockito.when(provider.size()).thenReturn(list.size());
-        int tailleList = provider.size();
-        assertEquals(tailleList, list.size());
-        //Mockito.verify(provider).size();
+        //List<Pokemon> list = Arrays.asList(bulbi, aqua);
+        //Mockito.when(pokedex.size()).thenReturn(list.size());
+        pokedex.addPokemon(bulbi);
+        pokedex.addPokemon(aqua);
+        int tailleList = pokedex.size();
+        assertEquals(tailleList, 2);
+        //Mockito.verify(pokedex).size();
     }
 }
