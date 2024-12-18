@@ -19,7 +19,7 @@ public class IPokedexTest {
     public void setUp() throws Exception {
         //pokedex = Mockito.mock(IPokedex.class);
         pokedex = new Pokedex();
-        pokemonFactory  = new PokemonFactory()
+        pokemonFactory  = new PokemonFactory();
     }
 
     @Test
