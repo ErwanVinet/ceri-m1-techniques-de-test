@@ -6,6 +6,7 @@ public class PokemonFactory implements IPokemonFactory {
 
     @Override
     public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) {
+        try {
             PokemonMetadataProvider metadataProvider = new PokemonMetadataProvider();
             PokemonMetadata metadata = metadataProvider.getPokemonMetadata(index);
 
@@ -16,8 +17,11 @@ public class PokemonFactory implements IPokemonFactory {
             double iv = (double) (ivAttack + ivDefense + ivVitesse) / 45;
 
             return new Pokemon(index, metadata.getName(), metadata.getAttack() + ivAttack, metadata.getDefense() + ivDefense, metadata.getStamina() + ivVitesse, cp, hp, dust, candy, iv);
-        
-        
+        } 
+        catch (PokedexException e) {
+            System.err.println("Erreur lors de la création du Pokemon");
+        }
 
+        return null;
     }
 }
